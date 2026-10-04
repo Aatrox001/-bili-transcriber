@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bili-transcriber"
+version = "0.1.0"
+description = "Download audio from a Bilibili video and transcribe it to text with Whisper"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.28",
+    "tqdm>=4.64",
+    "numpy>=1.22",
+    "faster-whisper>=1.0",
+]
+authors = [{ name = "bili-transcriber contributors" }]
+
+[project.scripts]
+bili-transcribe = "bili_transcriber.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
